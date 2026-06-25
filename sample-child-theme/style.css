@@ -1,0 +1,99 @@
+/*
+ Theme Name:   GP Child Theme - AI Coding Lab
+ Theme URI:
+ Description:  GeneratePress子テーマ — 生成AIを活用したページコーディング学習用。
+               プロジェクトに合わせてテーマ名や説明を自由に変更してください。
+ Author:
+ Template:     generatepress
+ Version:      1.0.0
+ Text Domain:  gp-child-ai-lab
+*/
+
+/* ============================================================
+   Design Tokens
+   ============================================================
+   プロジェクトに合わせてカスタマイズしてください。
+   プレフィックスのデフォルトは wpai- ですが、自由に変更できます。
+   例: mysite-, corp-, portfolio- など
+   ============================================================ */
+:root {
+    /* --- カラーパレット --- */
+    --wpai-primary: #2c3e50;
+    --wpai-primary-light: #34495e;
+    --wpai-accent: #3498db;
+    --wpai-accent-hover: #2980b9;
+    --wpai-text: #333333;
+    --wpai-text-muted: #777777;
+    --wpai-bg: #ffffff;
+    --wpai-bg-section: #f8f9fa;
+    --wpai-border: #e0e0e0;
+
+    /* --- タイポグラフィ --- */
+    --wpai-font-primary: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+    --wpai-font-heading: 'Noto Sans JP', sans-serif;
+    --wpai-font-size-base: 16px;
+    --wpai-font-size-sm: 14px;
+    --wpai-font-size-lg: 18px;
+    --wpai-font-size-xl: 24px;
+    --wpai-font-size-2xl: 32px;
+    --wpai-font-size-3xl: 48px;
+    --wpai-line-height: 1.8;
+
+    /* --- スペーシング --- */
+    --wpai-space-xs: 4px;
+    --wpai-space-sm: 8px;
+    --wpai-space-md: 16px;
+    --wpai-space-lg: 32px;
+    --wpai-space-xl: 64px;
+    --wpai-space-2xl: 96px;
+
+    /* --- レイアウト --- */
+    --wpai-container-max: 1200px;
+    --wpai-border-radius: 8px;
+    --wpai-border-radius-lg: 16px;
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+body {
+    font-family: var(--wpai-font-primary);
+    font-size: var(--wpai-font-size-base);
+    line-height: var(--wpai-line-height);
+    color: var(--wpai-text);
+    background-color: var(--wpai-bg);
+}
+
+/* ============================================================
+   カスタムコンポーネント
+   ============================================================
+   ここに生成AIが作成したコンポーネントのCSSを追加していきます。
+
+   命名規則:
+     CSSクラス: .wpai-コンポーネント名  （例: .wpai-hero, .wpai-cta-button）
+     BEM記法:   .wpai-hero__title, .wpai-hero__description
+     CSS変数:   var(--wpai-*)
+
+   書き方のルール:
+     - モバイルファーストで記述（min-width メディアクエリ）
+     - Design Tokens の変数を使用（ハードコードした色・サイズは避ける）
+     - コンポーネントごとにセクションコメントで区切る
+
+   例:
+     .wpai-hero {
+         padding: var(--wpai-space-xl) var(--wpai-space-md);
+         background-color: var(--wpai-bg-section);
+     }
+
+     .wpai-hero__title {
+         color: var(--wpai-primary);
+         font-size: var(--wpai-font-size-2xl);
+         font-weight: bold;
+     }
+
+     @media (min-width: 768px) {
+         .wpai-hero__title {
+             font-size: var(--wpai-font-size-3xl);
+         }
+     }
+   ============================================================ */

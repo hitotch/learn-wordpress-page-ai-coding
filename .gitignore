@@ -1,0 +1,17 @@
+# WordPress & MySQL data
+wordpress_data/
+docker/db/
+
+# Environment (contains passwords)
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

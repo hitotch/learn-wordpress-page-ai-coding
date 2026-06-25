@@ -1,0 +1,31 @@
+services:
+  wpai-wordpress:
+    build:
+      context: ./docker/wordpress
+    ports:
+      - "80:80"
+    environment:
+      WORDPRESS_DB_HOST: wpai-db:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./wordpress_data:/var/www/html
+      - ./docker/wordpress/php.ini:/usr/local/etc/php/php.ini
+      - ./.env:/var/www/.env
+      # 子テーマ（ワークスペース並列フォルダからマウント）
+      - ../generatepress-child:/var/www/html/wp-content/themes/generatepress-child
+    depends_on:
+      - wpai-db
+
+  wpai-db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/db:/var/lib/mysql
